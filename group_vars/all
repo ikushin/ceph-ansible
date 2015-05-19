@@ -14,7 +14,7 @@ dummy:
 ########
 
 # COMMUNITY VERSION
-#ceph_stable: true # use ceph stable branch
+ceph_stable: true # use ceph stable branch
 #ceph_stable_key: https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc
 #ceph_stable_release: hammer # ceph stable release
 
@@ -51,7 +51,7 @@ dummy:
 
 ## Ceph options
 #
-#fsid: "{{ cluster_uuid.stdout }}"
+fsid: "{{ cluster_uuid.stdout }}"
 #cephx: true
 #cephx_require_signatures: true # Kernel RBD does NOT support signatures!
 #cephx_cluster_require_signatures: true
@@ -61,24 +61,24 @@ dummy:
 
 ## Monitor options
 #
-#monitor_interface: interface
+monitor_interface: eth0
 #mon_osd_down_out_interval: 600
 #mon_osd_min_down_reporters: 7 # number of OSDs per host + 1
-#mon_clock_drift_allowed: .15
-#mon_clock_drift_warn_backoff: 30
-#mon_osd_full_ratio: .95
-#mon_osd_nearfull_ratio: .85
+mon_clock_drift_allowed: .15
+mon_clock_drift_warn_backoff: 30
+mon_osd_full_ratio: .95
+mon_osd_nearfull_ratio: .85
 #mon_osd_report_timeout: 300
 
 ## OSD options
 #
-#journal_size: 0
+journal_size: 1024
 #pool_default_pg_num: 128
 #pool_default_pgp_num: 128
 #pool_default_size: 2
 #pool_default_min_size: 1
-#cluster_network: 0.0.0.0/0
-#public_network: 0.0.0.0/0
+cluster_network: 192.168.222.0/24
+public_network: 192.168.222.0/24
 #osd_mkfs_type: xfs
 #osd_mkfs_options_xfs: -f -i size=2048
 #osd_mount_options_xfs: noatime
@@ -104,16 +104,16 @@ dummy:
 
 ## MDS options
 #
-#mds: false # disable mds configuration in ceph.conf
+mds: false # disable mds configuration in ceph.conf
 
 # Rados Gateway options
 #
-#radosgw: false # referenced in monitor role too.
+radosgw: false # referenced in monitor role too.
 #radosgw_dns_name: your.subdomain.tld # subdomains used by radosgw. See http://ceph.com/docs/master/radosgw/config/#enabling-subdomain-s3-calls
 
 ## REST API options
 #
-#restapi: false # disable restapi configuration in ceph.conf
+restapi: false # disable restapi configuration in ceph.conf
 #restapi_public_addr: 0.0.0.0:5000
 #restapi_base_url: /api/v0.1
 #restapi_log_level: warning
@@ -121,4 +121,4 @@ dummy:
 ## Testing mode
 # enable this mode _only_ when you have a single node
 # if you don't want it keep the option commented
-#common_single_host_mode: true
+common_single_host_mode: true

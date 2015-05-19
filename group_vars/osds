@@ -20,7 +20,7 @@ dummy:
 # [osds]
 # osd0 ceph_crush_root=foo ceph_crush_rack=bar
 
-crush_location: false
+crush_location: true
 osd_crush_location: "'root={{ ceph_crush_root }} rack={{ ceph_crush_rack }} host={{ ansible_hostname }}'"
 
 ##############
@@ -44,15 +44,15 @@ osd_crush_location: "'root={{ ceph_crush_root }} rack={{ ceph_crush_rack }} host
 
 # USE WITH CAUTION
 # Erase partitions structure and layout of the given devices below prior to prepare them
-#zap_devices: false
+zap_devices: true
 
 # Declare devices
 # All the scenarii inherit from the following device declaration
 #
-#devices:
-#  - /dev/sdb
-#  - /dev/sdc
-#  - /dev/sdd
+devices:
+  - /dev/sdb
+  - /dev/sdc
+  - /dev/sdd
 #  - /dev/sde
 
 # Device discovery is based on the Ansible fact 'ansible_devices'
