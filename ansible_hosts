@@ -3,4 +3,4 @@
 localhost
 
 [osds]
-localhost
+localhost ceph_crush_root=foo ceph_crush_rack=bar ansible_hostname=h0
