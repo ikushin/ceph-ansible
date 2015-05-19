@@ -88,13 +88,14 @@ devices:
 # 1. Pre-allocate all the devices
 # 2. Progressively add new devices
 
-#raw_multi_journal: false
-#raw_journal_devices:
+raw_multi_journal: true
+raw_journal_devices:
 #  - /dev/sdb
 #  - /dev/sdb
 #  - /dev/sdc
 #  - /dev/sdc
 #
+  - /dev/sde
 
 # IV. Fourth scenario: use directory instead of disk for OSDs
 # Use 'true' to enable this scenario
