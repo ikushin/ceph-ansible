@@ -69,7 +69,7 @@ devices:
 # This will collocate both journal and data on the same disk
 # creating a partition at the beginning of the device
 
-#journal_collocation: true
+journal_collocation: false
 
 
 # II. Second scenario: single journal device for N OSDs
@@ -90,12 +90,11 @@ devices:
 
 raw_multi_journal: true
 raw_journal_devices:
-#  - /dev/sdb
-#  - /dev/sdb
-#  - /dev/sdc
+  - /dev/sde
+  - /dev/sde
+  - /dev/sde
 #  - /dev/sdc
 #
-  - /dev/sde
 
 # IV. Fourth scenario: use directory instead of disk for OSDs
 # Use 'true' to enable this scenario
