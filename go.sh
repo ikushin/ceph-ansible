@@ -1,4 +1,5 @@
 
+ssh localhost "hostname"
 sudo aptitude install -y ansible
 
 ansible-playbook -i ansible_hosts --list-hosts site.yml
