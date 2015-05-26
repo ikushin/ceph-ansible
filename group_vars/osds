@@ -20,7 +20,7 @@ dummy:
 # [osds]
 # osd0 ceph_crush_root=foo ceph_crush_rack=bar
 
-crush_location: true
+crush_location: false
 osd_crush_location: "'root={{ ceph_crush_root }} rack={{ ceph_crush_rack }} host={{ ansible_hostname }}'"
 
 ##############
@@ -53,7 +53,6 @@ devices:
   - /dev/sdb
   - /dev/sdc
   - /dev/sdd
-#  - /dev/sde
 
 # Device discovery is based on the Ansible fact 'ansible_devices'
 # which reports all the devices on a system. If chosen all the disks
@@ -82,8 +81,7 @@ journal_collocation: false
 # Use 'true' to enable this scenario
 #
 # In the following example:
-# * sdd and sde will get sdb as a journal
-# * sdf and sdg will get sdc as a journal
+# * sdb and sdc and sdd will get sde as a journal
 # While starting you have 2 options:
 # 1. Pre-allocate all the devices
 # 2. Progressively add new devices
@@ -93,8 +91,6 @@ raw_journal_devices:
   - /dev/sde
   - /dev/sde
   - /dev/sde
-#  - /dev/sdc
-#
 
 # IV. Fourth scenario: use directory instead of disk for OSDs
 # Use 'true' to enable this scenario
